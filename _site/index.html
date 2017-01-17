@@ -21,112 +21,113 @@
 
     <!-- PHP Form for Live Site
 <?php
- 
+
 if(isset($_POST['email'])) {
- 
-     
- 
+
+
+
     // EDIT THE 2 LINES BELOW AS REQUIRED
- 
+
     $email_to = "mjtarter@openmindwebs.com";
- 
+
     $email_subject = "mjtarter.com message";
- 
-     
- 
-     
- 
+
+
+
+
+
     function died($error) {
- 
+
         // your error code can go here
- 
+
         echo "<section class='main-content p-vert-50 confirmation-body'> We are very sorry, but there were error(s) found with the form you submitted. ";
- 
+
         echo "These errors appear below.<br /><br />";
- 
+
         echo $error."<br /><br />";
- 
+
         echo "Please go back and fix these errors.</section>";
- 
+
         die();
- 
+
     }
- 
-     
- 
+
+
+
     // validation expected data exists
- 
+
     if(!isset($_POST['name']) ||
- 
+
         !isset($_POST['email']) ||
 
         !isset($_POST['message'])) {
- 
-        died('We are sorry, but there appears to be a problem with the form you submitted.');         
- 
+
+        died('We are sorry, but there appears to be a problem with the form you submitted.');
+
     }
-   
+
     $name = $_POST['name']; // required
-  
+
     $email_from = $_POST['email']; // required
- 
+
     $message = $_POST['message']; // not required
 
-     
- 
+
+
     $error_message = "";
- 
+
     $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
- 
+
   if(!preg_match($email_exp,$email_from)) {
- 
+
     $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
- 
+
   }
- 
+
     $string_exp = "/^[A-Za-z .'-]+$/";
- 
+
   if(!preg_match($string_exp,$name)) {
- 
+
     $error_message .= 'The First Name you entered does not appear to be valid.<br />';
- 
+
   }
- 
- 
+
+
   if(strlen($error_message) > 0) {
- 
+
     died($error_message);
- 
-  } 
-     
- 
+
+  }
+
+
     function clean_string($string) {
- 
+
       $bad = array("content-type","bcc:","to:","cc:","href");
- 
+
       return str_replace($bad,"",$string);
- 
+
     }
 
 
- 
+
     $email_message .= "Name: ".clean_string($name)."\n";
-  
-    $email_message .= "Message: ".clean_string($message)."\n\n";  
-   
- 
-     
- 
+
+    $email_message .= "Email: ".clean_string($email_from)."\n";
+
+    $email_message .= "Message: ".clean_string($message)."\n\n";
+
+
+
 // create email headers
- 
-$headers = 'From: '.$email_from."\r\n".
- 
+
+$headers = 'From: mjtarter.com'."\r\n".
+
 'Reply-To: '.$email_from."\r\n" .
- 
+
 'X-Mailer: PHP/' . phpversion();
- 
-@mail($email_to, $email_subject, $email_message, $headers);  
- 
+
+@mail($email_to, $email_subject, $email_message, $headers);
+
 }?>
 <?php // if(isset($_POST['email'])) echo '<div class="text-center message-sent"><i class="fa fa-envelope-o"></i> Your message has been sent!</div>' ?>
 End Form !-->
@@ -173,8 +174,8 @@ End Form !-->
 						</div>
 						<div class="hidden-xs col-sm-4 col-sm-offset-0">
 							<div class="box">
-								<img src="/img/ecomm.png">
-								<h3>E-Commerce</h3>
+								<img src="/img/wordpress.png">
+								<h3>CMS</h3>
 							</div>
 						</div>
 					</div>
@@ -197,7 +198,7 @@ End Form !-->
 			<h2 class="text-center"><i>Matt Tarter </i></h2>
 			<h4 class="text-center">I create awesome stuff on the web and help businesses grow.</h4>
 			<div class="about-divider"></div>
-			<p>Hello, my name is Matt Tarter and I am a front-end software engineer with 3 years of experience designing, developing, testing, and debugging responsive websites and apps with clean, maintainable code that takes advantage of modern tools and frameworks. I am currently President and Developer at Open Mind Webs where I help businesses and individuals exceed their goals by harnessing the power of the web. I am also the founder of MyCampus Island - a web application aimed at providing easier access to student housing and Legendary Lifestyles - a fitness brand. My specialties include web development, app development, client management, entrepreneurship, marketing, and business development.</p>
+			<p>Hello, my name is Matt Tarter and I am a front-end software engineer with 4 years of experience designing, developing, testing, and debugging responsive websites and apps with clean, maintainable code that takes advantage of modern tools and frameworks. <br><br>As a self taught programmer, I am a quick learner and an expert with front end technologies including HTML5, CSS3, Bootstrap, Foundation, Responsive development, SEO, Git, and content management systems (specifically Wordpress). I also have experience with a large variety of technologies including PHP, SQL, Ruby on Rails, and Javascript. I have worked for several Denver-based web agencies and my portfolio includes 20+ websites and web apps built on a multitude of platforms for restaurants, doctors, film producers, publicly traded companies, and more.</p>
 			<div class="text-center">
 				<a href="#testimonials" class="btn-blue">Testimonials</a>
 				<a href="#portfolio" class="btn-transparent">View My Work</a>
@@ -206,15 +207,17 @@ End Form !-->
 		<div class="col-sm-4 wow slideInRight">
 			<h3 class="text-center">Skills</h3>
 			<ul class="skills">
-				<li><div class="wow fadeInLeft stats" data-wow-duration="1s" data-wow-delay=".5s" style="width:95%;"><i class="fa fa-code"></i> HTML</div></li>
-				<li><div class="wow fadeInLeft stats" data-wow-duration="1s" data-wow-delay=".5s" style="width:95%;"><i class="fa fa-code"></i> CSS</div></li>
+				<li><div class="wow fadeInLeft stats" data-wow-duration="1s" data-wow-delay=".5s" style="width:99%;"><i class="fa fa-code"></i> HTML5</div></li>
+				<li><div class="wow fadeInLeft stats" data-wow-duration="1s" data-wow-delay=".5s" style="width:99%;"><i class="fa fa-code"></i> CSS3</div></li>
+				<li><div class="wow fadeInLeft stats" data-wow-duration="1s" data-wow-delay=".5s" style="width:99%;"><i class="fa fa-code"></i> Responsive Development</div></li>
+				<li><div class="wow fadeInLeft stats" data-wow-duration="1s" data-wow-delay=".5s" style="width:92%;"><i class="fa fa-code"></i> Wordpress</div></li>
+				<li><div class="wow fadeInLeft stats" data-wow-duration="1s" data-wow-delay=".5s" style="width:85%;"><i class="fa fa-code"></i> Version Control</div></li>
+				<li><div class="wow fadeInLeft stats" data-wow-duration="1s" data-wow-delay=".5s" style="width:85%;"><i class="fa fa-code"></i> SEO</div></li>
+				<li><div class="wow fadeInLeft stats" data-wow-duration="1s" data-wow-delay=".5s" style="width:80%;"><i class="fa fa-code"></i> UI Design</div></li>
 				<li><div class="wow fadeInLeft stats" data-wow-duration="1s" data-wow-delay=".5s" style="width:60%;"><i class="fa fa-code"></i> <span class="hidden-xs hidden-sm hidden-md">Javascript</span><span class="hidden-lg">JS</span></div></li>
 				<li><div class="wow fadeInLeft stats" data-wow-duration="1s" data-wow-delay=".5s" style="width:45%;"><i class="fa fa-code"></i> PHP</div></li>
+				<li><div class="wow fadeInLeft stats" data-wow-duration="1s" data-wow-delay=".5s" style="width:40%;"><i class="fa fa-code"></i> Ruby on Rails</div></li>
 				<li><div class="wow fadeInLeft stats" data-wow-duration="1s" data-wow-delay=".5s" style="width:35%;"><i class="fa fa-code"></i> SQL</div></li>
-				<li><div class="wow fadeInLeft stats" data-wow-duration="1s" data-wow-delay=".5s" style="width:70%;"><i class="fa fa-code"></i> Ruby on Rails</div></li>
-				<li><div class="wow fadeInLeft stats" data-wow-duration="1s" data-wow-delay=".5s" style="width:80%;"><i class="fa fa-code"></i> UI Design</div></li>
-				<li><div class="wow fadeInLeft stats" data-wow-duration="1s" data-wow-delay=".5s" style="width:85%;"><i class="fa fa-code"></i> Wordpress</div></li>
-				<li><div class="wow fadeInLeft stats" data-wow-duration="1s" data-wow-delay=".5s" style="width:85%;"><i class="fa fa-code"></i> SEO</div></li>
 			</ul>
 			<h3 class="text-center">Tools</h3>
 			<ul class="tools">
@@ -226,6 +229,8 @@ End Form !-->
 				<li><i class="fa fa-chevron-right"></i> Bootstrap</li>
 				<li><i class="fa fa-chevron-right"></i> Foundation</li>
 				<li><i class="fa fa-chevron-right"></i> Jekyll</li>
+				<li><i class="fa fa-chevron-right"></i> Asana</li>
+				<li><i class="fa fa-chevron-right"></i> Terminal</li>
 			</ul>
 		</div>
 	</div>
